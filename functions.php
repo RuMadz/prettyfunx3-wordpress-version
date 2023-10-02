@@ -145,7 +145,7 @@ function prettyfunx3_scripts()
 	wp_enqueue_style('prettyfunx3-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_style_add_data('prettyfunx3-style', 'rtl', 'replace');
 	wp_enqueue_style('bootstrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
-	wp_style_add_data('pretty-funxional-style', 'rtl', 'replace');
+
 
 	wp_enqueue_script('prettyfunx3-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 

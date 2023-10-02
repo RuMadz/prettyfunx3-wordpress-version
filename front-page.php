@@ -36,22 +36,31 @@ get_header();
                 </div>
             </div>
             <div class="landing-page-btns-con">
-                <button type="button" class="btn btn-templates btn-lg">
-                    Templates
-                </button>
-                <button type="button" class="btn btn-blog btn-lg">Blog</button>
+                <a class="woocommerce-shop" href="<?php echo get_permalink(wc_get_page_id('shop')) ?>"
+                    title="<?php esc_attr_e('View the shop', 'prettyfunx3'); ?>">
+                    <button type="button" class="btn btn-templates btn-lg">
+                        Templates
+                    </button>
+
+
+                </a>
+                <a class="blogs-page" href="<?php echo get_permalink('blogs') ?>"
+                    title="<?php esc_attr_e('View Blogs', 'prettyfunx3'); ?>">
+                    <button type="button" class="btn btn-blog btn-lg">Blog</button>
+                </a>
             </div>
         </div>
     </div>
     <div class="prod-con page-o">
+
         <div class="prod-content">
             <div class="prod-pic">
-                <img
-                    src="/Users/sirru/Local Sites/pretty-funxional-30/app/public/wp-content/themes/prettyfunx3/assets/13.png" />
+                <?php echo do_shortcode('[featured_products products columns=1 limit=0]'); ?>
+
             </div>
             <div class="prod-info">
                 <div class="bs-title">
-                    <h3>Our best sellers</h3>
+                    <h3>Our best seller</h3>
                 </div>
                 <div class="temp-title">
                     <h2>Student Planner Template</h2>
@@ -64,13 +73,21 @@ get_header();
                         in mind, offering you a practical solution for tracking and organising your academic work.</p>
                 </div>
                 <div class="more-colors">
-                    <img src="/Users/sirru/Local Sites/pretty-funxional-30/app/public/wp-content/themes/prettyfunx3/assets/colour-wheel.png"
-                        alt="">
+
+
+                    <img src="https://media.flaticon.com/dist/min/img/filters/color.svg" />
                     <p>More colors available</p>
                 </div>
                 <div class="temp-buttons">
-                    <div class="buy-btn btn">Buy</div>
-                    <div class="gts-btn btn">Go to shop</div>
+                    <a class="woocommerce-shop" href="<?php echo get_permalink(wc_get_page_id('shop')) ?>"
+                        title="<?php esc_attr_e('View the shop', 'prettyfunx3'); ?>">
+                        <button class="arrow-button">
+                            Go to Shop
+
+                        </button>
+
+
+                    </a>
                 </div>
             </div>
 
@@ -79,36 +96,46 @@ get_header();
         </div>
     </div>
 
-    <div class="blog-con page-o">
+    <article id="post-<?php the_ID(); ?>" <?php post_class("homepage-latest-article"); ?>>
+        <div class="blog-con page-o">
+            <div class="blog-text-con blog-content">
+                <div class="lbp-con">
+                    <h4>Latests Blog Post</h4>
+                </div>
+                <div class="blog-display-con">
+                    <div class=" col blog-text">
+                        <div class="latest-blog-right-side">
 
-        <div class="blog-text-con blog-content">
-            <div class="lbp-con">
-                <h4>Latests Blog Post</h4>
-            </div>
-            <div class="blog-text">
-                <div class="blog-title">
-                    <h3>How to actually use Notion</h3>
-                </div>
-                <div class="blog-excerpt">
-                    <p>
-                        The ultimate Notion template to help you capture your notes,
-                        tasks, projects, and resources in one place. Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad...
-                    </p>
-                </div>
-                <div class="read-more-con">
-                    <button type="button" class="btn btn-lg btn-readm">
-                        Read More +
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="blog-img blog-content">
-            <img src="../Users/sirru/Local Sites/pretty-funxional-30/app/public/wp-content/themes/prettyfunx3/assets/blog-sample-pic.png"
-                alt="blog sample pic" />
-        </div>
-    </div>
+
+                            <header class="entry-header blog-title">
+                                <?php the_title(sprintf('<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h3>'); ?>
+                            </header><!-- .            entry-header -->
+
+
+                            <div class="entry-content blog-excerpt">
+                                <?php the_excerpt(); ?>
+                            </div><!-- .entry-content -->
+
+
+
+                            <?php if (get_edit_post_link()): ?>
+                                <footer class="entry-footer continue-reading ">
+                                    <?php echo '<div class="wp-block-read-more read-more-con"><button type="button" class="btn btn-lg btn-readm"><a href="' . get_permalink() . '" title="' . __('Read More ', 'prettyfunx3') . get_the_title() . '" rel="bookmark">Read More</a></button></div>'; ?>
+                                </footer><!-- .entry-footer -->
+
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="featured-img-box blog-img blog-content"">
+                        <?php prettyfunx3_post_thumbnail(); ?>
+                                    
+                                                        
+                                                    
+                                                    
+            </article><!-- #post-<?php the_ID(); ?> -->
+                        
+
 
 </main><!-- #main -->
 <?php

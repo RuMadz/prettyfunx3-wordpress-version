@@ -76,7 +76,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 * {
     margin: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 html {
@@ -414,7 +414,7 @@ html {
 /* Typography
 --------------------------------------------- */
 body,
-button,
+
 input,
 select,
 optgroup,
@@ -550,18 +550,17 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-    color: #4169e1;
+    color: #000;
+    text-decoration: none;
 }
 
 a:visited {
-    color: #800080;
+    color: #1b1b1b;
 }
 
 a:hover,
 a:focus,
-a:active {
-    color: #191970;
-}
+a:active {}
 
 a:focus {
     outline: thin dotted;
@@ -584,7 +583,7 @@ input[type="submit"] {
     background: #e6e6e6;
     color: rgba(0, 0, 0, 0.8);
     line-height: 1;
-    padding: 0.6em 1em 0.4em;
+    /* padding: 0.6em 1em 0.4em; */
 }
 
 button:hover,
@@ -797,7 +796,7 @@ textarea {
 .homepage-title h1 {
     font-size: 55px;
     font-weight: 200;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     margin: 0;
 }
 
@@ -821,31 +820,40 @@ textarea {
 .landing-page-btns-con {
     margin-top: 50px;
     margin-left: 100px;
+    justify-content: space-between;
 
 }
 
-button {
+button,
+.prod-pic .woocommerce ul li a.add_to_cart_button {
     border-radius: 50px;
     font-size: 18px;
     min-width: 150px;
-    min-height: 50px;
-    margin-left: 10px;
+    min-height: 45px;
+
 }
 
 
 .btn-templates,
 .btn-news,
 .btn-readm,
-.btn-free {
+.btn-free,
+.arrow-button {
     background-color: #000;
     color: #fff;
     border-radius: 50px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-readm a {
+    color: #fff;
 }
 
 .btn-blog {
     background-color: #fff;
     color: #000;
     border-radius: 50px;
+    margin-left: 40px;
 
 
 }
@@ -861,9 +869,48 @@ button {
 
 }
 
+.prod-content {
+    display: flex;
+    flex: 50%;
+}
+
 .prod-con {
-    margin: 50px 0px;
+    margin: 50px 50px;
     z-index: 1;
+    display: flex;
+}
+
+.products .columns-1 li {
+    display: flex;
+
+}
+
+.prod-pic {
+    width: 50%;
+}
+
+.prod-pic .woocommerce ul li a img {
+    width: 400px;
+}
+
+.prod-pic .woocommerce ul li a h2,
+.prod-pic .woocommerce ul li a span {
+    display: none;
+}
+
+.prod-pic .woocommerce ul li a.add_to_cart_button {
+    position: absolute;
+    left: 175%;
+    background-color: green;
+    text-align: center;
+    padding-top: 8px;
+    color: white;
+    translate: 0 -50px;
+}
+
+.prod-info {
+    width: 50%;
+    text-align: right;
 }
 
 .prod-content,
@@ -872,12 +919,17 @@ button {
     display: flex;
 }
 
-.color-wheel {
-    width: 25px;
-    height: 25px;
+.temp-buttons {
+    justify-content: center;
 }
 
-.more-colors {}
+.more-colors {
+    justify-content: end;
+}
+
+.more-colors img {
+    margin-bottom: 20px;
+}
 
 .more-colors p {
     color: #B7B5B6;
@@ -885,13 +937,14 @@ button {
 }
 
 /* LATEST BLOG POST */
-
 .blog-con {
-    display: grid;
-    grid-template-columns: 750px 4fr;
     background-color: #fff;
     padding: 30px 80px;
-    /* padding: 7px; */
+}
+
+.blog-display-con {
+    display: grid;
+    grid-template-columns: 750px 4fr;
 
 }
 
@@ -903,6 +956,7 @@ button {
 .blog-title h3 {
     font-family: 'Carena', sans-serif;
     margin-bottom: 10px;
+    font-size: xx-large;
 }
 
 
@@ -911,12 +965,13 @@ button {
 }
 
 .read-more-con {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .blog-img img {
-    height: 350px;
+    height: 250px;
     width: 350px;
+    border-radius: 20px;
 }
 
 /* FOOTER */
@@ -1146,7 +1201,7 @@ button {
     clip-path: inset(50%);
     height: 1px;
     margin: -1px;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: 0;
     position: absolute !important;
     width: 1px;
