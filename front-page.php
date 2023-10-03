@@ -44,8 +44,7 @@ get_header();
 
 
                 </a>
-                <a class="blogs-page" href="<?php echo get_permalink('blogs') ?>"
-                    title="<?php esc_attr_e('View Blogs', 'prettyfunx3'); ?>">
+                <a class="blogs-page" href="http://pretty-funxional-30.local/blogs/">
                     <button type="button" class="btn btn-blog btn-lg">Blog</button>
                 </a>
             </div>

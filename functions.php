@@ -147,7 +147,9 @@ function prettyfunx3_scripts()
 	wp_enqueue_style('bootstrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
 
+
 	wp_enqueue_script('prettyfunx3-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
