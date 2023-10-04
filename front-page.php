@@ -32,7 +32,7 @@ get_header();
             </div>
             <div class="homepage-subtitle-con">
                 <div class="homepage-subtitle">
-                    <h1>Productivity in <span class="subtitle-color">color</span></h1>
+                    <h1>Experience productivity in <span class="subtitle-color">colour</span></h1>
                 </div>
             </div>
             <div class="landing-page-btns-con">
